@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  background: #333;
   height: 100vh;
   width: 100vw;
 }
@@ -79,25 +78,36 @@ select {
   --clr-dark-bg: #13151b;
   --clr-light-btn: #383249;
   --clr-dark-btn: #2d2131;
-  --clr-accent: #433249;
+  --clr-accent: #8dc95e;
+  --clr-light-gray: #a19f99;
   --ff-title: "Faustina", serif;
   --ff-text: "Oswald", sans-serif;
   --ff-accent: "Tilt Prism", cursive;
-  --fs-700: 5rem;
-  --fs-600: 3.5rem;
+  --fs-700: 3rem;
+  --fs-600: 2.5rem;
   --fs-500: 2rem;
   --fs-400: 1.35rem;
   --fs-300: 1rem;
   --fs-200: 0.7rem;
+  --lh-normal: 1.3;
+  --lh-big: 1.5;
+}
 
-  @media only screen and (max-width: 35rem) {
+@media (min-width: 35rem) {
+  :root {
+    --fs-700: 3.5rem;
+    --fs-600: 3rem;
     --fs-500: 2.25rem;
     --fs-400: 1.5rem;
     --fs-300: 1.125rem;
     --fs-200: 0.9rem;
   }
+}
 
-  @media only screen and (max-width: 45rem) {
+@media (min-width: 45rem) {
+  :root {
+    --fs-700: 5rem;
+    --fs-600: 3.5rem;
     --fs-500: 2.5rem;
     --fs-400: 1.75rem;
     --fs-300: 1.375rem;
@@ -113,6 +123,10 @@ select {
 
 .text-accent {
   color: var(--clr-accent);
+}
+
+.text-light--gray {
+  color: var(--clr-light-gray);
 }
 
 .bg-dark {
@@ -163,7 +177,19 @@ select {
   font-size: var(--fs-200);
 }
 
+.lh-normal {
+  line-height: var(--lh-normal);
+}
+
+.lh-big {
+  line-height: var(--lh-big);
+}
+
 /* ----- LAYOUT ----- */
+
+.container {
+  width: 90%;
+}
 
 /* for screen readers */
 
@@ -188,6 +214,12 @@ select {
   backdrop-filter: blur(1.5rem);
 }
 
+.primary-navigation li a::after {
+  content: '/>';
+  font-size: .875em;
+  color: var(--clr-light-gray);
+}
+
 .primary-navigation a {
   text-decoration: none;
 }
@@ -202,7 +234,7 @@ select {
     z-index: 1000;
     inset: 0 0 0 30%;
     list-style: none;
-    padding: min(20rem, 15vh) 2rem;
+    padding: min(10rem, 5vh) 2rem;
     margin: 0;
     flex-direction: column;
     transform: translateX(100%);
@@ -218,7 +250,7 @@ select {
     position: absolute;
     z-index: 2000;
     right: 1rem;
-    top: 2rem;
+    top: 1.2rem;
     background: transparent;
     background-image: url(img/icon-hamburger.svg);
     background-repeat: no-repeat;
@@ -237,3 +269,50 @@ select {
     outline-offset: 5px;
   }
 }
+
+.primary-header {
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #a19f99;
+}
+
+.logo {
+  margin-inline: .5rem;
+}
+
+.logo::after {
+  content: '/>';
+  color: var(--clr-white);
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.logo::before {
+  content: '<';
+  color: var(--clr-white);
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.banner {
+  height: 100vh;
+  background: url(img/cool-background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.banner h2 {
+  text-align: left;
+  padding-block: 1rem;
+}
+
+.banner h3 {
+  text-align: left;
+  padding-block-end: 1rem;
+}
+
+.banner .container {
+  margin-inline: auto;
+}
+
