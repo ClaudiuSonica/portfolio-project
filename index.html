@@ -43,8 +43,92 @@
         <p>For me coding isn't just a job or a way of making money, for me coding is passion, is an hobby, and a way of living. I invest everything i have in every project like i would build it for myself. <span>Let me show you...</span></p>
       </section>
       <section id="projects" class="content">
-        
+        <div class="img-container">
+          <figure class="image-content">
+            <a 
+            target="_blank" 
+            href="https://age-calculator-app1.netlify.app/" class="img-link">
+              <img 
+                src="img/calculator.png" 
+                alt="age calculator app">
+            </a>
+            <figcaption>Age Calculator App</figcaption>
+          </figure>
+          <figure class="image-content">
+            <a 
+              target="_blank" 
+              href="https://yo-mama-jokes.netlify.app/" class="img-link">
+                <img 
+                  src="img/jokes.png" 
+                  alt="jokes generator app">
+            </a>
+            <figcaption>Jokes Generator App</figcaption>
+          </figure>
+          <figure class="image-content">
+            <a 
+              target="_blank" 
+              href="https://space-tourism-agency.netlify.app/" class="img-link">
+                <img 
+                  src="img/space.png" 
+                  alt="space agency website">
+            </a>
+            <figcaption>Space Agency Website</figcaption>
+          </figure>
+          <figure class="image-content">
+            <a 
+              target="_blank" 
+              href="https://3-column-card01.netlify.app/" class="img-link">
+                <img 
+                  src="img/card.png" 
+                  alt="description card">
+            </a>
+            <figcaption>Description Card</figcaption>
+          </figure>
+          <figure class="image-content">
+            <a 
+              target="_blank" 
+              href="https://nft-card01.netlify.app/"
+              class="img-link">
+                <img 
+                src="img/nft.png" 
+                alt="nft card">
+            </a>
+            <figcaption>NFT Marketplace</figcaption>
+          </figure>
+        </div>
       </section>
     </main>
+    <section>
+      <form action="index.html" method="post">
+        <label for="name">Name:</label>
+        <input 
+          id="name" 
+          type="text" 
+          name="name"
+          minlength="3"
+          maxlength="100"
+          pattern="[a-zA-Z]"
+          placeholder="e.x: John Doe"
+          required />
+        <label for="phone">Phone number:</label>
+        <input 
+          id="phone" 
+          type="number"
+          name="phone" 
+          minlength="10" 
+          maxlength="10" 
+          placeholder="e.x: 0759900012"
+          required />
+        <label for="email">Email:</label>
+        <input 
+          id="email"
+          type="email" 
+          name="email"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+          placeholder="e.x: myemail@gmail.com"
+          required />
+        <button type="submit" value="Contact Me!">Contact Me!</button>
+      </form>
+    </section>
   </body>
 </html>
