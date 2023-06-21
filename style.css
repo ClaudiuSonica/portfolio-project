@@ -18,6 +18,10 @@ body {
   width: 100vw;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 /* Reset margins */
 body,
 h1,
@@ -260,7 +264,7 @@ select {
 
   .mobile-nav-toggle {
     display: block;
-    position: fixed;
+    position: absolute;
     z-index: 2000;
     right: 1rem;
     top: 1.2rem;
@@ -275,6 +279,7 @@ select {
 
   .mobile-nav-toggle[aria-expanded="true"] {
     background-image: url(img/icon-close.svg);
+    position: fixed;
   }
 
   .mobile-nav-toggle:focus-visible {
@@ -286,7 +291,11 @@ select {
 .primary-header {
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #a19f99;
+  border-bottom: 1px solid var(--clr-light-gray);
+}
+
+.profile {
+  display: none;
 }
 
 .logo {
@@ -308,11 +317,12 @@ select {
 }
 
 .banner {
-  height: 100vh;
+  min-height: 100vh;
   background: url(img/cool-background.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-block-end: 2rem;
 }
 
 .banner h2 {
@@ -341,7 +351,6 @@ select {
   justify-content: flex-start;
   align-items: center;
   gap: 2rem;
-  margin-block-start: 2rem;
 }
 
 .skills .row {
@@ -373,28 +382,25 @@ select {
 .form {
   flex-direction: column;
   justify-content: center;
-  align-items: stretch;
   background-color: var(--clr-white);
   padding: 2rem;
   margin-inline: auto;
-  gap: 2.5rem;
+  gap: 1rem;
   border-radius: 1rem;
   margin-block-end: 2rem;
 }
 
-.form div label {
-  position: relative;
-  left: .5rem;
-  top: -1.125rem;
-  z-index: 100;
-}
-
 .form div input {
-  position: absolute;
   height: 2rem;
+  width: 100%;
   outline: none;
   border: 1px solid var(--clr-light-gray);
   border-radius: .5rem;
+}
+
+.form div {
+  flex-direction: column;
+  gap: .25rem;
 }
 
 .form button {
@@ -407,4 +413,47 @@ select {
 .form button:hover, .form button:active {
   transform: scale(1.05);
   box-shadow: 0 0 2rem var(--clr-dark-btn);
+}
+
+@media screen and (min-width: 35rem) {
+  .primary-header {
+    padding-inline: 1rem;
+  }
+
+  .primary-navigation {
+    gap: 1.5rem;
+  }
+
+  .primary-navigation li a {
+    font-size: var(--fs-300);
+  }
+
+  .nav-item {
+    gap: .25rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  .logo::after,
+  .logo::before {
+    font-size: 2.5rem;
+  }
+
+  .banner h2 {
+    max-width: 12ch;
+  }
+
+  .row img {
+    width: 5rem;
+  }
+}
+
+@media screen and (min-width: 45rem) {
+  .profile {
+    display: block;
+  }
 }
