@@ -356,8 +356,10 @@ select {
 
 .skills .row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  gap: 4vh;
 }
 
 .skills figcaption {
@@ -389,7 +391,6 @@ select {
   gap: 1rem;
   border-radius: 1rem;
   margin-block-end: 2rem;
-  max-width: 37vw;
 }
 
 .form div input {
@@ -455,7 +456,7 @@ select {
   }
 }
 
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 55rem) {
   .profile {
     display: block;
     margin-block-start: 2rem;
@@ -484,7 +485,7 @@ select {
   }
 
   .img-container img {
-    width: 37vw;
+    width: 30vw;
   }
 
   .img-container {
@@ -497,7 +498,7 @@ select {
 
   .image-content:is(:last-child) {
     position: relative;
-    left: 25%;
+    left: 20vw;
   }
 
   .image-content img {
@@ -511,5 +512,9 @@ select {
     transform: scale(1.2);
     -webkit-filter: blur(0);
     filter: blur(0);
+  }
+
+  .form {
+    max-width: 37vw;
   }
 }
